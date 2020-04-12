@@ -1,3 +1,9 @@
+# NOTE: To-do
+#    -  can add pomodoro function
+#    -  can add multiple timer functionality (from CL; requires threading)
+#    -  benchmark tests for resources used, when using sleep, as compared to system time checks.
+
+
 # demands command line Arguments 
 timerLength = ARGV
 #exits program if given no arguments
@@ -17,7 +23,6 @@ while timerLengthinSeconds > 0
     timerLengthinSeconds -= 1
     sleep(1)
 end
-
 
 # sends system notification through apple script when timer is up
 fork { exec ( "osascript -e 'display notification \"#{timerLength} minutes is up\" with title \"Timer done\"'" ) }
