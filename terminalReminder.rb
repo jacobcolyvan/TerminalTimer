@@ -14,7 +14,8 @@ timerLength = timerLength[0].to_f
 timerLengthinSeconds = (timerLength*60).to_i
 
 # sends system notification through apple script notifying that timer has started
-fork { exec ( "osascript -e 'display notification \"#{timerLength} minute timer is starting\" with title \"Timer starting\"'" ) }
+fork { exec ( "osascript -e 'display notification \"#{timerLength.to_i} minute timer is starting\" with title \"Timer starting\"'" ) }
+puts `clear`
 # timer loop that notifies command line every 10 seconds.
 while timerLengthinSeconds > 0
     if timerLengthinSeconds%10 == 0;
@@ -25,4 +26,4 @@ while timerLengthinSeconds > 0
 end
 
 # sends system notification through apple script when timer is up
-fork { exec ( "osascript -e 'display notification \"#{timerLength} minutes is up\" with title \"Timer done\"'" ) }
+fork { exec ( "osascript -e 'display notification \"#{timerLength.to_i} minutes is up\" with title \"Timer done\"'" ) }
