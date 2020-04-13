@@ -3,6 +3,7 @@
 #    -  can add multiple timer functionality (from CL; requires threading)
 #    -  benchmark tests for resources used, when using sleep, as compared to system time checks.
 
+# windowSize = fork{ exec 'printf', "\e[8;10;100t"}
 
 # demands command line Arguments 
 timerLength = ARGV
@@ -19,7 +20,7 @@ puts `clear`
 # timer loop that notifies command line every 10 seconds.
 while timerLengthinSeconds > 0
     if timerLengthinSeconds%10 == 0;
-        puts "There are #{timerLengthinSeconds/60}:#{timerLengthinSeconds%60} seconds left"
+        puts "#{timerLengthinSeconds/60}:#{timerLengthinSeconds%60} min"
     end
     timerLengthinSeconds -= 1
     sleep(1)
