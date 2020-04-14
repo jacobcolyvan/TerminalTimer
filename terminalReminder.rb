@@ -3,7 +3,10 @@
 #    -  can add multiple timer functionality (from CL; requires threading)
 #    -  benchmark tests for resources used, when using sleep, as compared to system time checks.
 
-# windowSize = fork{ exec 'printf', "\e[8;10;100t"}
+# makes window a predefined size
+fork{ exec 'printf', "\e[8;20;25t"}
+# sends window to top left corner
+fork{ exec 'printf', "\e[3;0;0t"}
 
 # demands command line Arguments 
 timerLength = ARGV
